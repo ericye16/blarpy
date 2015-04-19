@@ -79,7 +79,7 @@ def feature_hash_string(s, window, dim):
     length = len(s)
     max_num = 2.0 ** 64
     for x in range(0, length - window):
-        key = xxhash.xxh64(s[x:x + window]) % dim
+        key = xxhash.xxh64(s[x:x + window]).intdigest() % dim
         v[key] += 0x1
 
     return numpy.asarray(v.values())
@@ -173,7 +173,7 @@ parser.add_argument(
     '-g',
     action='store',
     dest='granularity',
-    default=2, 
+    default=2,
     type=int,
     help='Sets the granularity factor for auto-tuning, from 1-N'
     )
