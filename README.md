@@ -12,6 +12,13 @@ Exploring data to find unusual content? Blarpy is for you.
 
 Blarpy makes extensive use of num.py, and the excellent bitarray module from Ilan Schnell: https://github.com/ilanschnell/bitarray
 
+## Usage
+
+Clone this repository by running: `git clone https://github.com/ericye16/blarpy.git`.
+Then, run `[sudo] pip install -r requirements.txt`.
+
+While the `blar.py` can be downloaded and run standalone, it has dependencies on numpy, matplotlib and xxhash which can be taken care of by pip and `requirements.txt`.
+
 ## Details
 
 Blarpy is a tool for finding anomalies in sequences, such as text or lists of vectors. It converts data to a *Denoising Genomic Sequence* (DGS), and then analyzes it for unusual patterns. In particular, the method preserves the geometric properties of the sequence, enabling probabilistic analysis in a tiny fraction of the space.
